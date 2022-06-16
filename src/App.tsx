@@ -35,6 +35,7 @@ const referenceData: any[] = [
 
 const service: ComponentService = {
     loadRefrence: function (refId: string): Promise<AIPResponse<ModelRef>> {
+        console.log(`load reference id: ${refId}`);
         return new Promise((resolve, reject) => {
             resolve(
                 modelRefJson as AIPResponse<ModelRef>
@@ -43,6 +44,8 @@ const service: ComponentService = {
     },
 
     loadRefrenceData: function (refId: string, index: number, params?: StringAnyMap): Promise<AIPResponse<any>> {
+        console.log(`refid: ${refId}, index: ${index}`);
+        console.log(params);
         return new Promise((resolve, reject) => {
             if (index >= 0 && index < referenceData.length) {
                 resolve(
