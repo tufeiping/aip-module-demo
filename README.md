@@ -43,5 +43,6 @@ demo project make from `aip-toolkit` [aip-toolkit](https://www.npmjs.com/package
 - create a8 project npx aip-toolkit create <project-name> -c <context-path>
 - cd project-name directory and run npm i && npm start
 
+<img src="./snapshot.png" alt="snapshot" />
 
 > 北京用友审计软件有限公司  开发维护
