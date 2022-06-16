@@ -36,23 +36,18 @@ const referenceData: any[] = [
 const service: ComponentService = {
     loadRefrence: function (refId: string): Promise<AIPResponse<ModelRef>> {
         return new Promise((resolve, reject) => {
-            console.log('loadRefrence be called');
-            setTimeout(() => {
-                resolve(
-                    modelRefJson as AIPResponse<ModelRef>
-                );
-            }, 10);
+            resolve(
+                modelRefJson as AIPResponse<ModelRef>
+            );
         });
     },
-    loadRefrenceData: function (refId: string, index: number, params?: StringAnyMap | undefined): Promise<AIPResponse<any>> {
+
+    loadRefrenceData: function (refId: string, index: number, params?: StringAnyMap): Promise<AIPResponse<any>> {
         return new Promise((resolve, reject) => {
             if (index >= 0 && index < referenceData.length) {
-                setTimeout(() => {
-                    resolve(
-                        referenceData[index] as AIPResponse<any>
-                    );
-                }, 10);
-
+                resolve(
+                    referenceData[index] as AIPResponse<any>
+                );
             } else {
                 reject('data not found');
             }
@@ -87,7 +82,7 @@ class App extends PureComponent<IAppProps, any> {
             });
         }
     }
-    
+
     doSearch = (params: StringStringMap) => {
         Modal.success({
             title: '参数',
